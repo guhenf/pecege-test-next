@@ -1,0 +1,214 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "brand": "Honda",
+      "model": "S2000",
+      "year": 2008,
+      "price": 86,
+      "views": "744",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/173/full/honda-s2000.jpg?1688339317"
+    },
+    {
+      "id": "2",
+      "brand": "Lamborghini",
+      "model": "Murcielago",
+      "year": 2010,
+      "price": 47,
+      "views": "302",
+      "condition": "used",
+      "image": "https://uploaddeimagens.com.br/images/004/529/174/full/lambotghini-murcielago.jpg?1688339380"
+    },
+    {
+      "id": "3",
+      "brand": "McLaren",
+      "model": "F1",
+      "year": 2020,
+      "price": 99,
+      "views": "378",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/176/full/maclaren-f1.jpg?1688339438"
+    },
+    {
+      "id": "4",
+      "brand": "Ford",
+      "model": "Shelby",
+      "year": 2015,
+      "price": 80,
+      "views": "99",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/168/full/ford-mustang.jpg?1688339131"
+    },
+    {
+      "id": "5",
+      "brand": "Ford",
+      "model": "Truck",
+      "year": 1956,
+      "price": 12,
+      "views": "54",
+      "condition": "used",
+      "image": "https://uploaddeimagens.com.br/images/004/529/169/full/ford-truck.jpg?1688339191"
+    },
+    {
+      "id": "6",
+      "brand": "Honda",
+      "model": "NSX",
+      "year": 2003,
+      "price": 115,
+      "views": "987",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/171/full/honda-nsx.jpg?1688339242"
+    },
+    {
+      "id": "7",
+      "brand": "Chevrolet",
+      "model": "Chevy",
+      "year": 1989,
+      "price": 15,
+      "views": "7",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/166/full/chevrolet-chevy.jpg?1688338904"
+    },
+    {
+      "id": "8",
+      "brand": "Ford",
+      "model": "Mustang GT",
+      "year": 2018,
+      "price": 100,
+      "views": "456",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/167/full/ford-drift.jpg?1688339016"
+    },
+    {
+      "id": "9",
+      "brand": "Mazda",
+      "model": "RX-7",
+      "year": 2005,
+      "price": 136,
+      "views": "984",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/178/full/mazda-rx7.jpg?1688339501"
+    },
+    {
+      "id": "10",
+      "brand": "Nissan",
+      "model": "370Z",
+      "year": 2015,
+      "price": 4,
+      "views": "12",
+      "condition": "used",
+      "image": "https://uploaddeimagens.com.br/images/004/529/179/full/nissan-370z.jpg?1688339578"
+    },
+    {
+      "id": "11",
+      "brand": "Nissan",
+      "model": "Silvia S15",
+      "year": 2017,
+      "price": 215,
+      "views": "996",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/180/full/nissan-silvia.jpg?1688339646"
+    },
+    {
+      "id": "12",
+      "brand": "Nissan",
+      "model": "Skyline",
+      "year": 2011,
+      "price": 115,
+      "views": "741",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/182/full/nissan-skyline.jpg?1688339702"
+    },
+    {
+      "id": "13",
+      "brand": "Nissan",
+      "model": "300ZX",
+      "year": 2018,
+      "price": 97,
+      "views": "144",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/183/full/nissan-zx300.jpg?1688339788"
+    },
+    {
+      "id": "14",
+      "brand": "Pagani",
+      "model": "Huayra",
+      "year": 2021,
+      "price": 114,
+      "views": "602",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/184/full/pagani-huayra.jpg?1688339842"
+    },
+    {
+      "id": "15",
+      "brand": "Plymouth",
+      "model": "Hemi Cuda",
+      "year": 1986,
+      "price": 10,
+      "views": "68",
+      "condition": "used",
+      "image": "https://uploaddeimagens.com.br/images/004/529/196/full/plymouth-hemi.jpg?1688340601"
+    },
+    {
+      "id": "16",
+      "brand": "Porsche",
+      "model": "GT3",
+      "year": 2021,
+      "price": 75,
+      "views": "501",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/187/full/porsche-carrera.jpg?1688339954"
+    },
+    {
+      "id": "17",
+      "brand": "Studebaker",
+      "model": "Pickup",
+      "year": 1963,
+      "price": 25,
+      "views": "117",
+      "condition": "used",
+      "image": "https://uploaddeimagens.com.br/images/004/529/188/full/studebaker.jpg?1688340113"
+    },
+    {
+      "id": "18",
+      "brand": "Subaru",
+      "model": "Imprenza",
+      "year": 1998,
+      "price": 83,
+      "views": "654",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/190/full/subaru-impreza.jpg?1688340169"
+    },
+    {
+      "id": "19",
+      "brand": "Toyota",
+      "model": "Supra",
+      "year": 2012,
+      "price": 84,
+      "views": "57",
+      "condition": "used",
+      "image": "https://uploaddeimagens.com.br/images/004/529/192/full/toyota-supra.jpg?1688340294"
+    },
+    {
+      "id": "20",
+      "brand": "Toyota",
+      "model": "Celica GTS",
+      "year": 2006,
+      "price": 3,
+      "views": "66",
+      "condition": "used",
+      "image": "https://uploaddeimagens.com.br/images/004/529/191/full/toyota-celica.jpg?1688340224"
+    },
+    {
+      "id": "21",
+      "brand": "ToyStory",
+      "model": "Pizza Truck",
+      "year": 1998,
+      "price": 195,
+      "views": "998",
+      "condition": "new",
+      "image": "https://uploaddeimagens.com.br/images/004/529/194/full/toystory-truck.jpg?1688340355"
+    }
+  ]
+}
