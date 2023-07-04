@@ -1,1 +1,89 @@
+.container {
+  background-color: var(--background-color);
+  display: grid;
+  grid-template-rows: auto 25fr 3fr;
+}
 
+.content {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.3fr 4fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-areas:
+    'a s s s'
+    'a s s s'
+    'a s s s';
+}
+
+.search {
+  width: 100%;
+}
+
+.searchInput {
+  width: 70%;
+  margin: 0 0.5rem 2rem 0;
+}
+
+.priceBox {
+  background-color: var(--secundary-white);
+  width: 15rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    'p p p p p'
+    'd r r r r'
+    'd r r r r';
+}
+
+.priceText {
+  font-size: 0.9rem;
+  grid-area: p;
+}
+
+.sorts {
+  display: flex;
+  flex-direction: column;
+  grid-area: d;
+}
+
+.ranges {
+  margin-left: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: r;
+}
+
+.inputRange {
+  width: 4.5rem;
+}
+.btnRange {
+  width: 9.8rem;
+  height: 2rem;
+}
+
+.rotateLeft {
+  z-index: 1;
+}
+
+.footerText {
+  max-width: 40rem;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .searchInput {
+    width: 70%;
+  }
+  .footerText {
+    font-size: 12px;
+    width: 15rem;
+    text-align: justify;
+  }
+}

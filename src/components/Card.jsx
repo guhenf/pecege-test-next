@@ -1,6 +1,7 @@
 export default function Card({ item }) {
 
   let price = new Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(item.price)
+  let condition = item.condition === 'new' ? 'Novo' : 'Usado'
 
   return (
     <li key={item.id}>
@@ -9,7 +10,7 @@ export default function Card({ item }) {
       <div>
         <p>Marca: {item.brand}</p>
         <p>Modelo: {item.model}</p>
-        <p>Visto por {item.views} pessoas</p>
+        <p>Condicao: {condition}</p>
       </div>
     </li>
   )
