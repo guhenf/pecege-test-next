@@ -1,16 +1,28 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import useSWR from 'swr'
+import { Inter } from 'next/font/google'
+
 import styles from '@/styles/Home.module.css'
+
+import { useState } from 'react'
+import List from '@/components/List'
+import Header from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Index() {
-  const { data, error } = useSWR('/api/staticdata', fetcher)
+  const [params, setParams] = useState('')
+  const [filterType, setFilterType] = useState('')
+
+  const { data, error } = useSWR(
+    `/api/staticdata?${filterType}=${params}`,
+    fetcher
+  )
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
+
   return (
     <>
       <Head>
@@ -19,16 +31,44 @@ export default function Index() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <Header />
       <div className={inter.className}>
-        <h1>Meus Produtos</h1>
-        <ul>
-          {data.map((item) => (
-            <li>
-              <p>{item.brand}</p>
-              <p>{item.model}</p>
-            </li>
-          ))}
-        </ul>
+        <aside>
+          <button
+            onClick={() => {
+              setFilterType('sort')
+              setParams('low-to-high')
+            }}
+          >
+            Ordenar Menor Maior
+          </button>
+          <button
+            onClick={() => {
+              setFilterType('sort')
+              setParams('high-to-low')
+            }}
+          >
+            Ordenar Maior Menor
+          </button>
+          <button
+            onClick={() => {
+              setFilterType('')
+              setParams('')
+            }}
+          >
+            Resetar
+          </button>
+        </aside>
+        {data.length === 0 ? (
+          <section>
+            <h2>Nenhum produto encontrado, tente alterar os filtros...</h2>
+          </section>
+        ) : (
+          <section>
+            <h2>Lista de Produtos</h2>
+            <List data={data} />
+          </section>
+        )}
       </div>
     </>
   )
