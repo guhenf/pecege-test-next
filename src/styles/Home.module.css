@@ -1,7 +1,26 @@
+@keyframes rotate-wheels {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .container {
   background-color: var(--background-color);
   display: grid;
   grid-template-rows: auto 25fr 3fr;
+}
+
+.logo {
+  border: none;
+  width: 7rem;
+  height: 7rem;
+}
+
+.logo:hover {
+  animation: rotate-wheels 3s linear infinite;
 }
 
 .content {

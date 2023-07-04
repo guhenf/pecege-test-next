@@ -12,63 +12,70 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Article() {
 
-  const [params, setParams] = useState('')
-  const [filterType, setFilterType] = useState('')
+  const [sort, setSort] = useState('')
+  const [text, setText] = useState('')
+  const [search, setSearch] = useState('')
 
-  const { data, error } = useSWR(
-    `/api/staticdata?${filterType}=${params}`,
+  const [minPrice, setMinPrice] = useState('')
+  const [maxPrice, setMaxPrice] = useState('')
+
+  const { data } = useSWR(
+    `api/staticdata?sort=${sort}&minPrice=${minPrice}&maxPrice=${maxPrice}&search=${search}`,
     fetcher
   )
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
 
   return (
     <div className={styles.content}>
       <aside>
         <div className={styles.search}>
-          <input className={styles.searchInput} placeholder='Buscar produtos...' />
-          <MagnifyingGlass />
+          <input onChange={(e) => {
+            setText(e.target.value)
+          }} className={styles.searchInput} placeholder='Buscar produtos...' />
+          <MagnifyingGlass onClick={() => setSearch(text)} />
         </div>
         <div className={styles.priceBox}>
           <p className={styles.priceText}>Filtro e Ordenagem por Precos</p>
           <div className={styles.sorts}>
             <SortUp
               onClick={() => {
-                setFilterType('sort')
-                setParams('high-to-low')
+                setSort('highToLow')
               }}
             />
             <RotateLeft
               className={styles.rotateLeft}
               onClick={() => {
-                setFilterType('')
-                setParams('')
+                setSort('')
               }}
             />
             <SortDown
               onClick={() => {
-                setFilterType('sort')
-                setParams('low-to-high')
+                setSort('lowToHigh')
               }}
             />
           </div>
           <div className={styles.ranges}>
-            <input className={styles.inputRange} placeholder='Max' type='number' />
-            <input className={styles.inputRange} placeholder='Min' type='number' />
-            <button className={styles.btnRange}>Filtrar</button>
+            <input value={minPrice} className={styles.inputRange} onChange={(e) => {
+              setMinPrice(e.target.value)
+            }} placeholder='Min' type='number' />
+            <input value={maxPrice} className={styles.inputRange} onChange={(e) => {
+              setMaxPrice(e.target.value)
+            }} placeholder='Max' type='number' />
+            {/* <button className={styles.btnRange}>Filtrar</button> */}
           </div>
         </div>
       </aside>
-      {data.length === 0 ? (
+      {data?.length === 0 ? (
         <section>
           <h2>Nenhum produto encontrado, tente alterar os filtros...</h2>
         </section>
-      ) : (
+      ) : null}
+      {data?.length > 0 ? (
         <section>
           <h2>Lista de Produtos</h2>
           <List data={data} />
         </section>
-      )}
+      ) : null}
+
     </div>
   )
 }

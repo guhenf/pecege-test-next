@@ -4,23 +4,29 @@ import { promises as fs } from 'fs'
 import {
   sortProductsByHighestPrice,
   sortProductsByLowestPrice,
+  searchProducts,
+  filterProductsByPrice,
 } from '../../functions/functions.js'
 
 export default async function handler(req, res) {
-  const sortHighestToLowest = req.query.sort === 'high-to-low'
-  const sortLowestToHighest = req.query.sort === 'low-to-high'
+  const { sort, search, minPrice, maxPrice } = req.query
 
   const jsonDirectory = path.join(process.cwd(), 'json')
   const fileContents = await fs.readFile(jsonDirectory + '/data.json', 'utf8')
 
-  const data = JSON.parse(fileContents).products
+  let data = JSON.parse(fileContents).products
 
-  if (sortHighestToLowest) {
-    res.status(200).json(sortProductsByHighestPrice(data))
+  if (sort === 'highToLow') {
+    data = sortProductsByHighestPrice(data)
   }
-  if (sortLowestToHighest) {
-    res.status(200).json(sortProductsByLowestPrice(data))
-  } else {
-    res.status(200).json(data)
+  if (sort === 'lowToHigh') {
+    data = sortProductsByLowestPrice(data)
   }
+  if (search) {
+    data = searchProducts(data, search)
+  }
+  if (minPrice || maxPrice) {
+    data = filterProductsByPrice(data, minPrice || 0, maxPrice || Infinity)
+  }
+  return res.status(200).json(data)
 }

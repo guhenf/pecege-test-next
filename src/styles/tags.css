@@ -40,6 +40,11 @@ li {
   align-items: center;
   border-radius: var(--radius);
   box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+li:hover {
+  transform: scale(1.04);
+  transition: 0.05s;
 }
 
 img {
