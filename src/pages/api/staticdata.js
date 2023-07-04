@@ -11,6 +11,8 @@ import {
 export default async function handler(req, res) {
   const { sort, search, minPrice, maxPrice } = req.query
 
+  let text = search.toLowerCase()
+
   const jsonDirectory = path.join(process.cwd(), 'json')
   const fileContents = await fs.readFile(jsonDirectory + '/data.json', 'utf8')
 
@@ -23,7 +25,7 @@ export default async function handler(req, res) {
     data = sortProductsByLowestPrice(data)
   }
   if (search) {
-    data = searchProducts(data, search)
+    data = searchProducts(data, text)
   }
   if (minPrice || maxPrice) {
     data = filterProductsByPrice(data, minPrice || 0, maxPrice || Infinity)

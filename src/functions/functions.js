@@ -1,6 +1,4 @@
 export const searchProducts = (data, inputText) => {
-  inputText.toLowerCase()
-
   const list = data.filter((item) => {
     const carBrand = item.brand
     const carModel = item.model
