@@ -88,6 +88,6 @@ footer {
   color: var(--secundary-font-color);
   display: flex;
   justify-content: center;
-  transform: scale(1.2);
+
   padding: 2rem 0;
 }
